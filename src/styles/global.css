@@ -1,0 +1,120 @@
+:root {
+  --brand: #0e7c86;
+  --brand-dark: #0a5c64;
+  --ink: #1b2a2f;
+  --muted: #5b6b70;
+  --bg: #ffffff;
+  --bg-alt: #f2f8f8;
+  --border: #dbe7e8;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+a { color: var(--brand); }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+.container { width: min(1080px, 100% - 2rem); margin-inline: auto; }
+
+.site-header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid var(--border); z-index: 10; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .75rem; }
+.brand { display: flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--brand); color: #fff; }
+nav { display: flex; align-items: center; gap: 1.1rem; }
+nav a:not(.btn) { color: var(--muted); text-decoration: none; font-weight: 500; }
+nav a.active { color: var(--brand); }
+
+.btn { display: inline-block; padding: .8rem 1.4rem; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 600; text-decoration: none; border: 2px solid var(--brand); cursor: pointer; }
+.btn:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+.btn-small { padding: .4rem 1rem; }
+.btn-outline { background: transparent; color: var(--brand); }
+.btn-outline:hover { color: #fff; }
+
+.hero { background: linear-gradient(135deg, #e3f4f5, #f7fcfc); padding: clamp(3rem, 10vw, 6rem) 0; }
+.hero h1 { max-width: 16ch; }
+.lead { max-width: 52ch; font-size: 1.15rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+.section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
+.section-alt { background: var(--bg-alt); }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 1.5rem; }
+.card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; background: #fff; }
+.card h3 { font-size: 1.15rem; }
+.card p { margin: 0 0 .75rem; color: var(--muted); }
+.card .card-meta { color: var(--brand-dark); font-weight: 600; margin: 0; }
+
+.two-col { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.hours > div { display: flex; justify-content: space-between; gap: 1rem; padding: .5rem 0; border-bottom: 1px solid var(--border); max-width: 380px; }
+.hours dt { font-weight: 600; }
+.hours dd { margin: 0; color: var(--muted); }
+address { font-style: normal; margin-bottom: 1rem; }
+
+.cta { text-align: center; padding: 3.5rem 0; background: var(--brand); color: #fff; }
+.cta .btn { background: #fff; color: var(--brand-dark); border-color: #fff; }
+
+.site-footer { padding: 1.5rem 0; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--border); }
+.site-footer p { margin: 0; }
+
+@media (max-width: 480px) {
+  nav { gap: .7rem; }
+  .brand { font-size: .85rem; }
+  nav a[href="/"] { display: none; }
+}
+
+/* Booking */
+.booking { max-width: 640px; }
+.step { margin-bottom: 2rem; }
+.step h2 { font-size: 1.15rem; }
+.muted { color: var(--muted); }
+select { width: 100%; padding: .75rem; font: inherit; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+.summary { padding: 1rem; background: var(--bg-alt); border-radius: var(--radius); font-weight: 600; }
+
+.calendar { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+.cal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+.cal-nav { border: 0; background: none; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--brand); padding: 0 .6rem; }
+.cal-nav:disabled { color: var(--border); cursor: not-allowed; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+.cal-weekday { font-size: .8rem; color: var(--muted); padding-bottom: .25rem; }
+.cal-day { aspect-ratio: 1; border: 1px solid transparent; border-radius: 8px; background: none; font: inherit; cursor: pointer; }
+.cal-day:hover:not(:disabled) { background: var(--bg-alt); border-color: var(--brand); }
+.cal-day:disabled { color: #b9c5c7; cursor: not-allowed; }
+.cal-day.is-selected, .slot.is-selected { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+.slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: .5rem; }
+.slot { padding: .6rem; border: 1px solid var(--border); border-radius: 8px; background: #fff; font: inherit; cursor: pointer; }
+.slot:hover:not(:disabled) { border-color: var(--brand); }
+.slot:disabled { color: #b9c5c7; background: var(--bg-alt); text-decoration: line-through; cursor: not-allowed; }
+
+.btn { white-space: nowrap; }
+
+.form { display: grid; gap: 1rem; margin-top: 1rem; }
+.form label { display: grid; gap: .3rem; font-weight: 600; }
+.form input, .form textarea { padding: .75rem; font: inherit; font-weight: 400; border: 1px solid var(--border); border-radius: 8px; }
+.form input[aria-invalid='true'] { border-color: #c0392b; }
+.field-error, .form-error { color: #c0392b; font-weight: 500; font-size: .9rem; margin: 0; }
+
+.reference { font-size: 1.2rem; }
+.details > div { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--border); }
+.details dt { font-weight: 600; }
+.details dd { margin: 0; text-align: right; }
+.check { display: flex; gap: .5rem; align-items: center; margin-bottom: 1rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 640px; }
+th, td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.is-cancelled { color: var(--muted); text-decoration: line-through; }
+
+/* Admin table becomes stacked cards on phones */
+@media (max-width: 640px) {
+  table { min-width: 0; }
+  thead { display: none; }
+  tr { display: block; border: 1px solid var(--border); border-radius: var(--radius); padding: .5rem .75rem; margin-bottom: .75rem; }
+  td { display: flex; justify-content: space-between; gap: 1rem; border: 0; padding: .3rem 0; text-align: right; }
+  td[data-label]::before { content: attr(data-label); font-weight: 600; text-align: left; }
+}
