@@ -2,7 +2,7 @@
 
 A booking app for a small dental clinic in Cairo. Patients pick a service, a date and a free time slot, and get a reference number. The clinic sees all bookings in one table and can cancel them.
 
-**Live demo:** _add link after deploy_
+**Live demo:** https://nile-smile-booking.vercel.app
 
 ![Home page](docs/home.png)
 ![Booking flow](docs/booking.png)
