@@ -36,7 +36,7 @@ Small clinics often take bookings by phone or WhatsApp. That means missed calls,
 - **The admin page has no login.** A real version needs authentication and server-side checks.
 - **No SMS or WhatsApp reminders.** The obvious next feature for reducing no-shows.
 - **One dentist, one chair.** Multiple dentists would mean availability per dentist.
-- _Add your own: what you would change after talking to a real clinic._
+- **Treatment lengths are my guesses.** Before building more, I would ask a real clinic how long each treatment actually takes and how often it runs late, then add a buffer between bookings so one delay does not push back the whole day.
 
 ## Run it locally
 
