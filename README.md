@@ -8,8 +8,6 @@ A booking app for a small dental clinic in Cairo. Patients pick a service, a dat
 ![Booking flow](docs/booking.png)
 ![Admin](docs/admin.png)
 
-_Screenshots to add: home, booking, admin (phone width works well)._
-
 ## The problem
 
 Small clinics often take bookings by phone or WhatsApp. That means missed calls, double bookings and no overview. This app lets patients book themselves any time and stops two people getting the same slot.
